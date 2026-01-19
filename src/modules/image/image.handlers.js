@@ -21,7 +21,7 @@ async function handleConvert(req, res) {
 
     res.json({
       message: "Image converted successfully",
-      downloadUrl: `${req.protocol}://${req.get("host")}/uploads/${path.basename(outputPath)}`
+      output: outputPath
     });
 
   } catch (err) {
