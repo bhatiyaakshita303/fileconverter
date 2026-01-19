@@ -45,8 +45,8 @@ async function handleCompress(req, res) {
 
     res.json({
       message: "Image compressed successfully",
-      outputPath,
-      qualityUsed: quality
+      downloadUrl: `${req.protocol}://${req.get("host")}/uploads/${path.basename(output)}`
+      // qualityUsed: quality
     });
 
   } catch (err) {
